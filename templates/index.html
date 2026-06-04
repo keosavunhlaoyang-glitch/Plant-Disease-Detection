@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Plant Disease Detection</title>
+
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+
+
+<nav class="navbar">
+
+    <div class="nav-left">
+
+        <img src="/static/images/logo.png" class="logo">
+
+        <div class="system-info">
+            <div>ມະຫາວິທະຍາໄລແຫ່ງຊາດ</div>
+            <div>ຄະນະວິທະຍາສາດທຳມະຊາດ</div>
+            <div>ພາກວິຊາວິທະຍາສາດຄອມພິວເຕີ</div>
+        </div>
+
+    </div>
+
+    <ul class="menu">
+        <li><a href="#" onclick="showPage('home')">ໜ້າຫຼັກ</a></li>
+        <li><a href="#" onclick="showPage('upload')">ເຄື່ອງມືການກວດສອບ</a></li>
+        <li><a href="#" onclick="showPage('how')">ຄູ່ມືການນຳໃຊ້</a></li>
+        <li><a href="#" onclick="showPage('contact')">ຕິດຕໍ່ພວກເຮົາ</a></li>
+    </ul>
+
+</nav>
+
+<!-- HOME -->
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>ລະບົບການກວດສອບພະຍາດພືດດ້ວຍ AI</h1>
+
+        <h2>AI Plant Disease Detection</h2>
+
+        <p>
+            ລະບົບນີ້ພັດທະນາຂຶ້ນເພື່ອກວດສອບ ແລະ ຈຳແນກພະຍາດພືດ
+            ປະເພດ ເຂົ້າ, ສາລີ ແລະ ໝາກແຕງ ຈໍານວນ 9 ຊະນິດ ໄດ້ແກ່: 
+            ພະຍາດເຂົ້າໃບໄໝ້ (Leaf Blast)
+            ພະຍາດເຂົ້າໃບແຫ້ງ (Bacterial Leaf Blight)
+            ພະຍາດເຂົ້າໃບຈຸດສີນ້ຳຕານ (Brown Spot)
+            ພະຍາດສາລີໃບໄໝ້ (Leaf Blight)
+            ພະຍາດສາລີໃບຈຸດສີເທົາ (Gray Leaf Spot)
+            ພະຍາດສາລີໃບຂີ້ມ້ຽງ (Common Rust)
+            ພະຍາດໝາກແຕງລານ້ຳຄ້າງ (Downy Mildew)
+            ພະຍາດຕົ້ນແຕກຍາງໄຫຼ (Gummy Stem Blight)
+            ພະຍາດໝາກແຕງໃບຈຸດດ່າງ (Anthracnose)
+            ດ້ວຍເຕັກໂນໂລຊີ Deep Learning ຜ່ານໂຄງສ້າງເຄືອຂ່າຍ 
+            Convolutional Neural Networks (CNN) ແລະ ໂມເດວ ResNet18
+          
+        </p>
+
+    </div>
+
+</section>
+
+<!-- UPLOAD -->
+<section id="upload" class="page-section upload-section" style="display:none;">
+
+    <h2>ເຄື່ອງມືການກວດສອບ</h2>
+
+    <input type="file" id="fileInput" hidden>
+
+    <label for="fileInput" class="upload-btn">
+    ເລືອກຮູບພາບ
+    </label>
+
+    <p id="fileName">(ຍັງບໍ່ໄດ້ເລືອກຮູບ)</p>
+
+    <br><br>
+
+    <img id="preview"
+         src="https://placehold.co/350x250"
+         width="350">
+
+    <br><br>
+
+    <button onclick="upload()">
+        ທຳນາຍຜົນ (Predict)
+    </button>
+
+    <br><br>
+
+    <div class="result-card">
+
+    <h3 id="disease">---</h3>
+
+    <p>
+        ຄ່າຄວາມໝັ້ນໃຈ (Confidence):
+        <span id="confidence">0%</span>
+    </p>
+
+    <div style="background:#eee;height:10px;width:100%;">
+        <div id="confidenceFill"
+             style="height:10px;width:0%;background:green;">
+        </div>
+    </div>
+
+    <br>
+
+</div>
+
+</section>
+
+<!-- HOW -->
+<section id="how" class="page-section"
+         class="page-section"
+         style="display:none;">
+
+    <h2>ຄູ່ມືການນຳໃຊ້</h2>
+
+    <p>1. ອັບໂຫຼດຮູບພາບພືດ</p>
+    <p>2. ກົດປຸ່ມ ທຳນາຍຜົນ</p>
+    <p>3. ລະບົບ AI ຈະວິເຄາະຮູບພາບ</p>
+    <p>4. ລະບົບຈະສະແດງຊື່ພະຍາດ ແລະ ຄ່າຄວາມໝັ້ນໃຈ</p>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page-section" style="display:none;">
+
+    <h2>ຕິດຕໍ່ພວກເຮົາ</h2>
+
+    <p>
+        ມະຫາວິທະຍາໄລແຫ່ງຊາດ
+    </p>
+
+    <p>
+        ຄະນະວິທະຍາສາດທຳມະຊາດ
+    </p>
+
+    <p>
+        ພາກວິຊາວິທະຍາສາດຄອມພິວເຕີ
+    </p>
+
+    <p>
+        ເບີໂທ: (+856)2052635283; (+856)2078623997
+    </p>
+
+    <p>
+        Email: keosavunhlaoyang@gmail.com; paneexiong970@gmail.com
+    </p>
+
+</section>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

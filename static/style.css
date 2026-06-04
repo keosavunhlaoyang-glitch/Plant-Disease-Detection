@@ -1,0 +1,255 @@
+/* =========================
+   GLOBAL STYLE
+========================= */
+html{
+    scroll-behavior:smooth;
+}
+
+section{
+    scroll-margin-top:90px;
+}
+
+body {
+    margin: 0;
+    font-family: "Times New Roman", "Saysettha OT", sans-serif;
+    background: #f5f6fa;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 40px;
+    background:#fff;
+}
+
+.nav-left{
+    display:flex;
+    align-items:flex-end;
+    gap:15px;
+}
+
+.logo{
+    width:70px;
+}
+
+.system-info{
+    display:flex;
+    flex-direction:column;
+    line-height:1.6;
+    color:#1b5e20;
+    font: weight 400px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:row;
+    list-style:none;
+    gap:30px;
+    margin:0;
+    padding:0;
+}
+
+.menu li{
+    list-style:none;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+}
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    min-height:80vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.55)
+        ),
+        url('/static/images/thatluang.jpg');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    color:white; 
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+}
+
+.hero-content h1{
+    color:#ffffff; 
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero-content h2{
+    color:#ffd54f; 
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    color:#ffffff; 
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.feature-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    width: 250px;
+    background: white;
+    color: #222;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   UPLOAD + RESULT CARD
+========================= */
+
+.upload-section,
+.result-section,
+.how-section,
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.result-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 350px;
+    margin: auto;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    background: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    font-family: "Saysettha OT", sans-serif;
+}
+
+button:hover {
+    background: darkgreen;
+    transform: scale(1.05);
+}
+
+/* =========================
+   INPUT
+========================= */
+
+input[type="file"] {
+    padding: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .menu {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .feature-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.page-section{
+    min-height:80vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+    box-sizing:border-box;
+}
+
+.page-section{
+    min-height:80vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+#how,
+#contact,
+#upload{
+    background:#f5f6fa;
+}
+
+.upload-btn{
+    display:inline-block;
+    background:green;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.upload-btn:hover{
+    background:darkgreen;
+}
