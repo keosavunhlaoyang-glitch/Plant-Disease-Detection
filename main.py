@@ -30,11 +30,16 @@ async def predict_api(file: UploadFile = File(...)):
     img = preprocess(image)
 
     conf, pred = predict(model, img)
+    
+    print("Confidence =", conf)
+    print("Prediction =", classes[pred])
 
     label = classes[pred]
 
-    if conf < 0.4:
+    if conf < 0.80:
         label = "ບໍ່ຮູ້ຈັກ"
+
+    print("LABEL =", label)
 
     info = get_info(label)
 

@@ -51,7 +51,11 @@ def get_info(label):
 
         "cucumber___anthracnose": {
             "lo": "ພະຍາດໝາກແຕງໃບຈຸດດ່າງ (Anthracnose)"
-        }
+        },
+
+        "ບໍ່ຮູ້ຈັກ": {
+            "lo": "ບໍ່ຮູ້ຈັກ (Unknown)"
+       }
     }
 
     return data.get(label, {
